@@ -1,5 +1,4 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
-import api from "../api/api";
 import axios from "axios";
 import reducer from "../Reducer/reducer";
 const BooksContext = createContext();
@@ -7,6 +6,8 @@ const BooksContext = createContext();
 export const useBooks = () => {
   return useContext(BooksContext);
 };
+
+const api = "https://example-data.draftbit.com/books?_limit=32";
 
 const initialState = {
   services: [],
