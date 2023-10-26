@@ -1,5 +1,5 @@
 import { useContext, createContext, useReducer, useEffect } from "react";
-import { api } from "../api/api";
+import api from "../api/api";
 import axios from "axios";
 import reducer from "../Reducer/reducer";
 const BooksContext = createContext();
