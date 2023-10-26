@@ -14,7 +14,7 @@ const BookDetails = () => {
         <img
           src={book?.image_url}
           alt="Laptop"
-          className=" rounded-md h-96 w-[2000px]"
+          className=" rounded-md h-96 w-[2500px]"
         />
       </div>
       <div className="flex justify-start flex-col">

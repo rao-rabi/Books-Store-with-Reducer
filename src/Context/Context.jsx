@@ -10,6 +10,7 @@ export const useBooks = () => {
 
 const initialState = {
   services: [],
+  products:[],
 };
 
 export const BooksContextProvider = ({ children }) => {
@@ -31,8 +32,34 @@ export const BooksContextProvider = ({ children }) => {
     getBookData(api);
   }, []);
 
+  // add to cart
+ 
+  const addToCart = (product) => {
+   const updatedCart = state.products.concat(product);
+   dispatch({
+    type:"ADD_TO_CART",
+    payload: updatedCart,
+   })
+  }
+
+  // remove from cart
+
+  const removeFromCart = (product) => {
+    const updatedCart = state.products.filter((currentProduct) => currentProduct.title !== product.title)
+    dispatch({
+      type:"REMOVE_FROM_CART",
+      payload: updatedCart,
+     })
+  }
+
+
+  const value = {products : state.products, 
+    addToCart,
+    removeFromCart,
+     ...state}
+
   return (
-    <BooksContext.Provider value={{ ...state}}>
+    <BooksContext.Provider value={value}>
       {children}
     </BooksContext.Provider>
   );

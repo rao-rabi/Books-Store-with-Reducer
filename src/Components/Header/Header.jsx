@@ -53,12 +53,15 @@ function Header() {
         </ul>
       </div>
       <section className="flex justify-center items-center space-x-6">
-        <div>
+        {/* cart */}
+        <NavLink to="cart">
           <i
             className="fa-solid fa-cart-shopping fa-bounce fa-lg"
             style={{ color: "#00040a" }}
           ></i>
-        </div>
+        </NavLink>
+
+        {/* mobile responsiveness */}
         <div className="MOBILE-MENU flex sm:hidden">
           <div
             className="HAMBURGER-ICON space-y-1.5"
